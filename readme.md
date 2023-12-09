@@ -1,5 +1,8 @@
 # 551 project
 
+### file structure
+![struct](struct.png)
+
 ### Installation
 To set up the project environment:
 ```
