@@ -31,15 +31,15 @@ edit try update id=0 b="abcdefg"
 edit try delete id=0
 fetch try *
 ```
-### To manage data within CSV files:
+### To manage load data from CSV files:
 
 ```
-MAKE BTC.csv COLUMNS candle_begin_time=datetime64, open=float, ...
+MAKE BTC.csv COLUMNS candle_begin_time=datetime64, open=float, high=float, low=float, close=float, volume=float, quote_volume=float, trade_num=int, taker_buy_base_asset_volume=float, taker_buy_quote_asset_volume=float, Spread=float, symbol=str, avg_price_1m=float, avg_price_5m=float
 EDIT BTC.csv INSERT FILE BTC.csv
-MAKE BTCALL.csv COLUMNS candle_begin_time=datetime64, open=float, ...
+MAKE BTCALL.csv COLUMNS candle_begin_time=datetime64, open=float, high=float, low=float, close=float, volume=float, quote_volume=float, trade_num=int, taker_buy_base_asset_volume=float, taker_buy_quote_asset_volume=float, Spread=float, symbol=str, avg_price_1m=float, avg_price_5m=float
 EDIT BTCALL.csv INSERT FILE BTCALL.csv
 ```
-### To perform SQL-like queries on CSV data:
+### To perform SQL-like queries on table:
 
 ```
 FROM BTC.csv FIND candle_begin_time, volume, symbol CHARACTER volume < 1000
